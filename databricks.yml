@@ -25,6 +25,22 @@ resources:
           sql_warehouse:
             id: ${var.sql_warehouse_id}
             permission: CAN_USE
+        # Mínimo privilégio: cada tabela usada em config/queries entra aqui com SELECT
+        - name: vendas
+          uc_securable:
+            securable_type: TABLE
+            securable_full_name: serverless_stable_zza0u0_catalog.lumora_vendas.vendas
+            permission: SELECT
+        - name: lojas
+          uc_securable:
+            securable_type: TABLE
+            securable_full_name: serverless_stable_zza0u0_catalog.lumora_vendas.lojas
+            permission: SELECT
+        - name: produtos
+          uc_securable:
+            securable_type: TABLE
+            securable_full_name: serverless_stable_zza0u0_catalog.lumora_vendas.produtos
+            permission: SELECT
 
 targets:
   default:
